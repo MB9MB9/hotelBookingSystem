@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  backend:
+    image: myacrregistry01.azurecr.io/backend:latest
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/hotelBooking
+  frontend:
+    image: myacrregistry01.azurecr.io/frontend:latest
+    ports:
+      - "3000:3000"
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
